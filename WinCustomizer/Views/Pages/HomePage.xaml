@@ -1,0 +1,31 @@
+﻿<Page x:Class="WinCustomizer.Views.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="Главная">
+    <Grid Margin="24 10 0 0 ">
+
+        <ItemsControl x:Name="MonitorsList" ItemsSource="{Binding Monitors}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ui:Card Margin="0,0,15,15" Width="220" Padding="15">
+                        <StackPanel>
+                            <ui:SymbolIcon Symbol="Desktop24" FontSize="48" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+                            <ui:TextBlock FontTypography="BodyStrong" Text="{Binding Name}" HorizontalAlignment="Center"/>
+                            <ui:TextBlock FontTypography="Caption" Text="{Binding Resolution}" Foreground="Gray" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+
+                            <ui:Button Content="Настроить" Appearance="Secondary" Margin="0,15,0,0" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </ui:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+</Page>
